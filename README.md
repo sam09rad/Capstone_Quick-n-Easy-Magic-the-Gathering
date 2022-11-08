@@ -10,7 +10,7 @@ The name of our application is Content Creator TCG *work in progress*
 This android app is a card viewer app. You select a card and see it's details. Each character card will have basic stats, skills, a card type, and card cost.
 Any other type of card will have most of the same a items associated with them, but wil have a descrption of how they work.
 This app is designed to have one location for all the cards to easily and efficiently find a card that a player may want to learn more about.
-It will also contain a rulebook, a how to play example session, and a how to get started activity.
+It will also contain a rulebook, a how to play example session, and a how to get started activity. 
 
 
                  ."-,.__
