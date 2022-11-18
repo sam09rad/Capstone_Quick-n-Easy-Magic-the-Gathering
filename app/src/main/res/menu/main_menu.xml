@@ -11,7 +11,16 @@
 
     <item
         android:id="@+id/action_viewer"
-        android:icon="@drawable/ic_action_card_viewer"
+        android:icon="@drawable/ic_rule_book_viewer"
+        android:iconTint="#070000"
+        android:orderInCategory="10"
+        android:title="Viewer"
+        app2:showAsAction="always"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_card_viewer"
+        android:icon="@drawable/ic_card_viewer"
         android:iconTint="#070000"
         android:orderInCategory="10"
         android:title="Viewer"
