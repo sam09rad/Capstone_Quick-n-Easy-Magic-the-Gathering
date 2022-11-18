@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:app2="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemeas.android.com/apk/res-auto">
     <item
         android:id="@+id/activity_main"
         android:orderInCategory="100"
         android:title="Settings"
-        app:showAsAction="always"/>
-<!--        android:icon=""/>-->
+        app:showAsAction="always" />
+<!--        android:icon="@drawable/ic_card_viewer"-->
+
+    <item
+        android:id="@+id/action_viewer"
+        android:icon="@drawable/ic_action_card_viewer"
+        android:iconTint="#070000"
+        android:orderInCategory="10"
+        android:title="Viewer"
+        app2:showAsAction="always"
+        app:showAsAction="always" />
 </menu>
