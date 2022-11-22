@@ -7,16 +7,20 @@
         android:orderInCategory="100"
         android:title="Settings"
         app:showAsAction="always" />
-<!--        android:icon="@drawable/ic_card_viewer"-->
 
     <item
-        android:id="@+id/action_viewer"
+        android:id="@+id/action_rule_book_viewer"
         android:icon="@drawable/ic_rule_book_viewer"
         android:iconTint="#070000"
         android:orderInCategory="10"
         android:title="Viewer"
-        app2:showAsAction="always"
-        app:showAsAction="always" />
+        app2:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_quickstart_guide"
+        android:title="Quickstart guide"
+        android:icon="@drawable/ic_quickstart_guide"
+        app2:showAsAction="always"/>
 
     <item
         android:id="@+id/action_card_viewer"
@@ -24,6 +28,5 @@
         android:iconTint="#070000"
         android:orderInCategory="10"
         android:title="Viewer"
-        app2:showAsAction="always"
-        app:showAsAction="always" />
+        app2:showAsAction="always"/>
 </menu>

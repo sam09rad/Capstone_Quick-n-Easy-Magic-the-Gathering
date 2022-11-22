@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -35,5 +37,33 @@ public class CardViewer extends AppCompatActivity {
         });
 
 
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_card_viewer:
+                Intent intent = new Intent(CardViewer.this, CardViewer.class);
+                startActivity(intent);
+                return true;
+            case R.id.action_quickstart_guide:
+                intent = new Intent(CardViewer.this, QuickstartGuide.class);
+                startActivity(intent);
+                return true;
+            case R.id.action_rule_book_viewer:
+                intent = new Intent(CardViewer.this, RuleBook.class);
+                startActivity(intent);
+                return true;
+            default:
+                // Do nothing
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -46,9 +47,30 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_card_viewer:
+                Intent intent = new Intent(MainActivity.this, CardViewer.class);
+                startActivity(intent);
+                return true;
+            case R.id.action_quickstart_guide:
+                intent = new Intent(MainActivity.this, QuickstartGuide.class);
+                startActivity(intent);
+                return true;
+            case R.id.action_rule_book_viewer:
+                intent = new Intent(MainActivity.this, RuleBook.class);
+                startActivity(intent);
+                return true;
+            default:
+                // Do nothing
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }
