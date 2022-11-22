@@ -1,13 +1,9 @@
 package edu.cvtc.sradke7.contentcreatortcg;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -32,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ruleBookButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RuleBook.class));
+                startActivity(new Intent(MainActivity.this, RuleBookTableOfContents.class));
             }
         });
 

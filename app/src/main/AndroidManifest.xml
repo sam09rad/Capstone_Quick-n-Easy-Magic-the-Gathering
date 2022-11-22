@@ -13,6 +13,13 @@
         android:theme="@style/Theme.ContentCreatorTCG"
         tools:targetApi="31">
         <activity
+            android:name=".RuleBookTableOfContents"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".QuickstartGuide"
             android:exported="false"
             android:parentActivityName=".MainActivity">
@@ -21,7 +28,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".RuleBook"
+            android:name=".RuleBookGeneral"
             android:exported="false"
             android:parentActivityName=".MainActivity">
             <meta-data

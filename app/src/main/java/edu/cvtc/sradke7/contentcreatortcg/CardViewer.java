@@ -9,9 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 public class CardViewer extends AppCompatActivity {
 
@@ -57,7 +55,7 @@ public class CardViewer extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.action_rule_book_viewer:
-                intent = new Intent(CardViewer.this, RuleBook.class);
+                intent = new Intent(CardViewer.this, RuleBookGeneral.class);
                 startActivity(intent);
                 return true;
             default:

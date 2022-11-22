@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class RuleBook extends AppCompatActivity {
+public class RuleBookGeneral extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rule_book);
+        setContentView(R.layout.activity_rule_book_general);
     }
 
     @Override
@@ -24,15 +24,15 @@ public class RuleBook extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_card_viewer:
-                Intent intent = new Intent(RuleBook.this, CardViewer.class);
+                Intent intent = new Intent(RuleBookGeneral.this, CardViewer.class);
                 startActivity(intent);
                 return true;
             case R.id.action_quickstart_guide:
-                intent = new Intent(RuleBook.this, QuickstartGuide.class);
+                intent = new Intent(RuleBookGeneral.this, QuickstartGuide.class);
                 startActivity(intent);
                 return true;
             case R.id.action_rule_book_viewer:
-                intent = new Intent(RuleBook.this, RuleBook.class);
+                intent = new Intent(RuleBookGeneral.this, RuleBookGeneral.class);
                 startActivity(intent);
                 return true;
             default:
