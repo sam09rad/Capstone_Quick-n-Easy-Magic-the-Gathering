@@ -44,33 +44,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
         };
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_card_viewer:
-                Intent intent = new Intent(MainActivity.this, CardViewer.class);
-                startActivity(intent);
-                return true;
-            case R.id.action_quickstart_guide:
-                intent = new Intent(MainActivity.this, QuickstartGuide.class);
-                startActivity(intent);
-                return true;
-            case R.id.action_rule_book_viewer:
-                intent = new Intent(MainActivity.this, RuleBook.class);
-                startActivity(intent);
-                return true;
-            default:
-                // Do nothing
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
 }
