@@ -7,7 +7,7 @@
     android:background="@drawable/blacklotus"
     tools:context=".RuleBookGeneral"
     >
-
+<!-- make scroll view clickable rather than a button clickable=true -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
