@@ -5,29 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CardViewer"
-    android:background="@drawable/gradient_list"
+    android:background="@drawable/background_4"
     android:id="@id/mainLayout">
 
-    <TextView
-        android:id="@+id/cardViewText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Card Viewer Activity"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="51dp" />
-
     <Button
-        android:id="@+id/viewCardBrowserBtn"
+        android:id="@+id/searchCardBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="138dp"
-        android:layout_marginBottom="533dp"
-        android:text="card viewer"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="248dp"
+        android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:hint="Card Name"
+        android:id="@+id/plain_text_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="195dp"
+        android:layout_marginTop="237dp"
+        android:layout_marginEnd="196dp"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewText" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
