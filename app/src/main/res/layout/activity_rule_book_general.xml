@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/blacklotus"
-    tools:context=".RuleBookGeneral"
-    >
-<!-- make scroll view clickable rather than a button clickable=true -->
+    tools:context=".RuleBookGeneral">
+    <!-- make scroll view clickable rather than a button clickable=true -->
     <ScrollView
+        android:id="@+id/general_scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,6 +33,21 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/game_concepts_textView" />
+
+            <TextView
+                android:id="@+id/general_page_count_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:background="#99000000"
+                android:padding="5dp"
+                android:text="@string/page_1"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/game_concepts_textView" />
 
             <TextView
@@ -81,6 +96,16 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/button_cards"
                 app:layout_constraintEnd_toEndOf="@+id/concept_general_textView"
+                app:layout_constraintTop_toBottomOf="@+id/concept_general_textView" />
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/back"
+                app:layout_constraintEnd_toStartOf="@+id/btnCards"
+                app:layout_constraintStart_toEndOf="@id/btnMore"
                 app:layout_constraintTop_toBottomOf="@+id/concept_general_textView" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
