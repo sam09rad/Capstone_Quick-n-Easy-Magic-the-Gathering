@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class RuleBookTableOfContents extends AppCompatActivity implements View.OnClickListener{
+public class RuleBookTableOfContents extends AppCompatActivity implements View.OnClickListener {
     private TextView tvGeneral;
     private Class MyActivityName;
 

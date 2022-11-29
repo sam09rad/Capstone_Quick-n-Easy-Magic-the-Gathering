@@ -31,7 +31,8 @@
         </activity>
         <activity
             android:name=".RuleBookTableOfContents"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -47,7 +48,7 @@
         <activity
             android:name=".RuleBookGeneral"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".RuleBookTableOfContents">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
