@@ -2,8 +2,12 @@ package edu.cvtc.sradke7.contentcreatortcg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +15,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import me.saket.bettermovementmethod.BetterLinkMovementMethod;
 
 public class RuleBookGeneral extends AppCompatActivity {
 
@@ -50,12 +56,10 @@ public class RuleBookGeneral extends AppCompatActivity {
         txtGeneralPage = (TextView)findViewById(R.id.general_page_count_textView);
 
         // Not currently working, so commented out for now until a fix can be made.
-//        {
-//            // method to redirect to provided link
-//            txtGeneral.setMovementMethod(LinkMovementMethod.getInstance());
-//            // method to change color of link
-//            txtGeneral.setLinkTextColor(Color.YELLOW);
-//        }
+
+        txtGeneral.setMovementMethod(BetterLinkMovementMethod.getInstance());
+        txtGeneral.setLinkTextColor(Color.YELLOW);
+
         btnCards.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -314,7 +318,13 @@ public class RuleBookGeneral extends AppCompatActivity {
                 break;
         }
 
-        generalScrollView.setScrollY(0);
+        int generalScrollViewBottom = generalScrollView.getBottom();
+
+        ObjectAnimator objectAnimator = ObjectAnimator.ofInt(generalScrollView, "scrollY", generalScrollViewBottom, 0).setDuration(1000);
+        objectAnimator.start();
+
+        txtGeneral.setMovementMethod(BetterLinkMovementMethod.getInstance());
+        BetterLinkMovementMethod.linkify(Linkify.ALL, txtGeneral);
 
         return txtGeneralSection;
     }
