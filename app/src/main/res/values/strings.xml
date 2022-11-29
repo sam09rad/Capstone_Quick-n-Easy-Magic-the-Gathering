@@ -2,9 +2,22 @@
     <string name="app_name">Quick ‘n’ Easy: Magic the Gathering</string>
     <string name="general_rule_title">General</string>
     <string name="game_concepts">Game Concepts</string>
+    <string name="quick_review_concepts">Quick Review Concepts</string>
+    <string name="quick_start_title">Getting Started</string>
+
     <string name="more">More</string>
     <string name="button_cards">Cards</string>
     <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Quick Review Rules -->
+    <string name="quick_review_part_1">
+        \t\t
+        To start the game, shuffle your deck,also known as your library. Draw a hand of seven cards and check to see how many lands you have.
+        \n\n\t\t
+        You can look at the line of text just below a card’s art to see what type of card it is. For this first game, if you don’t have at least two land cards, reshuffle your deck (including your old hand) and draw a new hand.
+        \n\n\t\t
+        You and your opponent each start with 20 life, and you’ll each need a way to track your life total (such as dice or a pencil and paper). Reduce your opponent’s life total to 0 and you win the game!
+    </string>
 
     <!--  General rules  -->
     <string name="general_rules_part_1">
@@ -415,7 +428,7 @@
         \n\n\t\t
         108.6. For more information about cards, see section 2, “Parts of a Card.”
     </string>
-z    <string name="general_rules_part_10">
+    z    <string name="general_rules_part_10">
         \t\t
         109. Objects
         \n\n\t\t
@@ -1139,4 +1152,107 @@ z    <string name="general_rules_part_10">
     <string name="page_22">Page: 22</string>
     <string name="page_23">Page: 23</string>
     <string name="page_24">Page: 24</string>
+    <string name="types_of_cards">Types Of Cards</string>
+    <string name="types_of_cards_blurb">
+        \t\t
+        Your deck includes lands and creatures, and it may also include sorceries, instants, artifacts, enchantments, and planeswalkers!
+        On the next few pages, we’ll take a look at what the different types of cards are and how to use them.
+    </string>
+    <string name="lands">Lands</string>
+    <string name="lands_blurb">
+        \t\t
+        Land cards are the foundation of any successful Magic deck. Lands provide mana, the magical energy you need to cast all the other cards in your deck. You can play one land during your main phase on each of your turns. Lands stay on the battlefield in front of you. Your lands untap (reset) at the start of each of your turns so that you can use them again. There are five types of basic land, each one corresponding to one of the five colors of magic. Each color of magic has different strengths and capabilities. You’ll get to know the colors as you play more. Not all lands are basic lands. Some nonbasic lands tap for multiple colors of mana, while others tap for colorless mana but have unique abilities
+    </string>
+    <string name="spells">Spells</string>
+    <string name="spells_blurb">
+        \t\t
+        Every card that isn’t a land can be cast as a spell. Some types of spells are put onto the battlefield and become “permanents.” Other types of spells have their effect and then go to your graveyard (discard pile).</string>
+    <string name="creatures">Creatures</string>
+    <string name="creatures_blurb">
+        \t\t
+        Creatures are permanents that represent your minions. During combat, they can attack your opponents and defend you from opposing attacks. You can cast creature spells during your main phase.</string>
+    <string name="artifacts_enchantments_blurb">
+        \t\t
+        Artifacts and enchantments are permanents that represent magic items and stable magical manifestations. Most artifacts are colorless, meaning they don’t require a specific color of mana to cast. Some artifacts are also creatures. You can cast artifact and enchantment spells during your main phase</string>
+    <string name="artifacts_enchantments">Artifacts and Enchantments</string>
+    <string name="sorceries_instants_blurb">
+        \t\t
+        Sorcery and instant spells represent powerful incantations that can have a wide range of effects. After their effects happens, these spells are put into your graveyard. You can cast a sorcery only during your main phase, the same time you cast creatures and other permanent spells. You can cast an instant during either player’s turn, at almost any time . . . even in response to another spell!</string>
+    <string name="casting_spell">Casting Spell</string>
+    <string name="casting_spells_blurb">
+        \t\t
+        All cards except lands have a mana cost in the upper right corner. This cost is made up of symbols that tell you what kind of mana you have to spend to cast the spell. You must pay mana for each of these symbols in order to cast Shivan Dragon. The symbol Ro means one red mana. The symbol 4o means four mana of any kind. So you have to pay two red mana and four mana of any kind to pay this cost.</string>
+    <string name="parts_of_a_card">Parts of a Card</string>
+    <string name="parts_of_a_card_blurb">
+        \t\t
+        Spells have a mana cost that tells you how much mana you need to cast them. A card’s abilities appear in its text box. Some abilities have reminder text in parentheses to help explain what they do. A card may also have flavor text printed in italics that tells you something about the Magic world. Flavor text has no effect on game play. Creatures have two numbers in the lower right corner. The first number is power, which tells you how much damage the creature deals in combat. The second number is toughness. If a creature is dealt that much damage or more in a single turn, the creature is destroyed and put into its owner’s graveyard (discard pile).</string>
+    <string name="sorceries_and_instants">Sorceries and Instants</string>
+    <string name="combat">combat</string>
+    <string name="combat_blurb">You win the game by reducing your opponent’s life total to 0. The most common way to do that is to attack your opponent with creatures during combat.</string>
+    <string name="attacking_and_blocking">Attacking and Blocking</string>
+    <string name="attacking_and_blocking_blurb">
+        \t\t
+        During your turn, you decide which of your creatures, if any, will attack. You can’t attack with a creature if it’s tapped or if it entered the battlefield this turn. You have one combat phase in the middle of your turn, and all the creatures you decide to attack with attack at the same time. Once you’ve decided which of your creatures are attacking, tap those creatures. Your tapped creatures, like your tapped lands, will untap at the beginning of your next turn. Most of the time, your creatures will attack your opponent. Sometimes they can also attack planeswalkers. But creatures never attack other creatures. You just send them across the battlefield, and your opponent decides what happens next. Now imagine you’re on the other side of the battlefield. Your opponent has attacked you with some of his or her creatures. If you control any untapped creatures, you can use those creatures to block. Blocking doesn’t cause creatures to become tapped. Each blocking creature can block one attacking creature. You can also have multiple creatures block the same attacking creature. In that case, the attacking</string>
+    <string name="example_of_combat">Example of Combat</string>
+    <string name="example_of_combat_blurb">
+        \t\t
+        In the following combat examples, your opponent has attacked you with a Thundering Giant (4/3) and a Torch Fiend (2/1). Your only untapped creature is a Runeclaw Bear (2/2). What will you block?</string>
+    <string name="option_a">Option A: You Don\'t Block</string>
+    <string name="option_a_blurb">
+        \t\t
+        Unblocked attacking creatures deal damage to the opponent equal to their power. In this case, those creatures will deal a total of 6 damage to you, which means you lose 6 life. You might choose not to block if your life total is high and you want to save your creature for a counterattack.</string>
+    <string name="option_b">Option B: Block Thundering Giant</string>
+    <string name="option_b_blurb">
+        \t\t
+        Your Runeclaw Bear deals 2 damage to the Thundering Giant. The Giant has a toughness of 3, so it survives. That damage will heal at the end of the turn. Thundering Giant deals 4 damage to the 2-toughness Runeclaw Bear, which is destroyed (put into your graveyard). The unblocked Torch Fiend deals 2 damage to you. You didn’t destroy any of your opponent’s creatures, but you might block this way if your life total was low</string>
+    <string name="option_c">Option C: Block Torch Fiend</string>
+    <string name="option_c_blurb">
+        \t\t
+        Your Runeclaw Bear deals 2 damage to the 1-toughness Torch Fiend, and the Torch Fiend deals 2 damage to your Runeclaw Bear. Both creatures are destroyed. The unblocked Thundering Giant deals 4 damage to you. You might block this way if you want to destroy one of your opponent’s creatures and don’t mind being dealt a little damage</string>
+    <string name="responding_and_the_stack">Responding and the Stack</string>
+    <string name="responding_and_the_stack_blurb">
+        \t\t
+    When you cast a spell, it doesn’t resolve (have its effect) right away. It has to wait on the stack. Each player, including you, now gets a chance to cast an instant or activate an ability in response. If a player does, that instant or ability goes on the stack on top of what was already waiting there. When all players decline to do anything, the top spell or ability on the stack will resolve. For example, say you have a 2/2 Runeclaw Bear on the battlefield. You have Titanic Growth in your hand and your opponent has Lightning Strike. If you cast Titanic Growth first, your opponent can respond by casting Lightning Strike. Lightning Strike will be on top of Titanic Growth on the stack, so it will resolve first. Lightning Strike will deal 3 damage to Runeclaw Bear, which is enough to destroy it. Runeclaw Bear is put into your graveyard. When Titanic Growth tries to resolve, its target will be gone, so it will have no effect and will be put into the graveyard. On the other hand, if your opponent casts Lightning Strike first, you can respond with Titanic Growth. Titanic Growth will resolve first, boosting Runeclaw Bear into a 6/6 creature. Then Lightning Strike will resolve and deal 3 damage to it, but that’s not enough to destroy the suddenly enormous Bear! </string>
+    <string name="parts_of_a_turn">Parts of a Turn</string>
+    <string name="parts_of_a_turn_blurb">
+        \n
+        Beginning Phase -
+        \n
+        ∙ Untap step—Turn all your tapped cards upright again.
+        \n
+        ∙ Upkeep step
+        \n
+        ∙ Draw step—Draw a card from your library (deck).
+
+        \n\n
+        Main Phase -
+        \n
+        ∙ You may play one land from your hand by putting it onto the battlefield (table). You may cast creatures, sorceries, and other spells if you can pay for them.
+
+        \n\n
+        Combat Phase -
+        \n
+        ∙ Beginning of combat step
+        \n
+        ∙ Declare attackers step—Tap every creature you want to attack your opponent with. (A creature can’t attack the turn you cast it unless it has haste.)
+        \n
+        ∙ Declare blockers step—Each untapped defending creature may block one attacker. Creatures don’t have to block.
+        \n
+        ∙ Combat damage step—Blockers and the attackers they’re blocking deal damage to each other equal to their power, the first number in the lower right corner. If a creature takes damage at least equal to the second number, toughness, it’s destroyed. Unblocked attackers deal damage to your opponent, who loses that much life.
+        \n
+        ∙ End of combat step
+
+        \n\n
+        Main Phase (Again)
+        \n
+        You may play a land if you haven’t played one yet.
+        \n
+        You may cast spells.
+
+        \n\n
+        Ending Phase
+        \n
+        ∙ End step
+        \n
+        ∙ Cleanup step—Damaged creatures on the battlefield heal.</string>
 </resources>
