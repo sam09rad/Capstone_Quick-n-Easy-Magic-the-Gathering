@@ -50,6 +50,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/game_concepts_textView" />
 
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="94dp"
+                android:layout_height="0dp"
+                android:maxHeight="100dp"
+                android:minHeight="48dp"
+                android:prompt="@string/Empty"
+                app:layout_constraintBottom_toBottomOf="@id/general_page_count_textView"
+                app:layout_constraintStart_toStartOf="@id/general_page_count_textView"
+                app:layout_constraintTop_toTopOf="@id/general_page_count_textView"
+                app:layout_constraintVertical_bias="0.0" />
+
             <TextView
                 android:id="@+id/concept_general_textView"
                 android:layout_width="0dp"
@@ -88,7 +100,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/more"
-                app:layout_constraintStart_toStartOf="@+id/concept_general_textView"
+                app:layout_constraintEnd_toStartOf="@id/btnCards"
+                app:layout_constraintStart_toEndOf="@+id/btnBack"
                 app:layout_constraintTop_toBottomOf="@id/concept_general_textView" />
 
             <Button
@@ -106,8 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/back"
-                app:layout_constraintEnd_toStartOf="@+id/btnCards"
-                app:layout_constraintStart_toEndOf="@id/btnMore"
+                app:layout_constraintStart_toStartOf="@id/concept_general_textView"
                 app:layout_constraintTop_toBottomOf="@+id/concept_general_textView" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

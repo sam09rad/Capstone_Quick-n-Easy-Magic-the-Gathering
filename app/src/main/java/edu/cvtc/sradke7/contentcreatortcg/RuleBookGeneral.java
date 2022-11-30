@@ -1,5 +1,7 @@
 package edu.cvtc.sradke7.contentcreatortcg;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
@@ -12,13 +14,19 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.lang.reflect.Field;
 
 import me.saket.bettermovementmethod.BetterLinkMovementMethod;
 
-public class RuleBookGeneral extends AppCompatActivity {
+public class RuleBookGeneral extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     // Variables used in class
     Button
@@ -30,11 +38,25 @@ public class RuleBookGeneral extends AppCompatActivity {
             txtGeneralPage;
     private int
             txtGeneralSection = 1;
-    private String
-            string,
-            pageCount;
     ScrollView
             generalScrollView;
+    private Spinner spinner;
+    // Pages array
+    private int[] pageParagraphs = {
+            R.string.general_rules_part_1, R.string.general_rules_part_2, R.string.general_rules_part_3, R.string.general_rules_part_4, R.string.general_rules_part_5,
+            R.string.general_rules_part_6, R.string.general_rules_part_7, R.string.general_rules_part_8, R.string.general_rules_part_9, R.string.general_rules_part_10,
+            R.string.general_rules_part_11, R.string.general_rules_part_12, R.string.general_rules_part_13, R.string.general_rules_part_14, R.string.general_rules_part_15,
+            R.string.general_rules_part_16, R.string.general_rules_part_17, R.string.general_rules_part_18, R.string.general_rules_part_19, R.string.general_rules_part_20,
+            R.string.general_rules_part_21, R.string.general_rules_part_22, R.string.general_rules_part_23, R.string.general_rules_part_24
+    };
+    // Page numbers array
+    private int[] pageNumbers = {
+            R.string.page_1, R.string.page_2, R.string.page_3, R.string.page_4, R.string.page_5,
+            R.string.page_6, R.string.page_7, R.string.page_8, R.string.page_9, R.string.page_10,
+            R.string.page_11, R.string.page_12, R.string.page_13, R.string.page_14, R.string.page_15,
+            R.string.page_16, R.string.page_17, R.string.page_18, R.string.page_19, R.string.page_20,
+            R.string.page_21, R.string.page_22, R.string.page_23, R.string.page_24
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,19 +68,40 @@ public class RuleBookGeneral extends AppCompatActivity {
         generalScrollView = (ScrollView)findViewById(R.id.general_scrollView);
         generalScrollView.setSmoothScrollingEnabled(true);
 
-        // First button is for switching the text in the text view
+        // Set the button variables
         btnCards = (Button)findViewById(R.id.btnCards);
         btnGeneralMore = (Button)findViewById(R.id.btnMore);
         btnBack = (Button)findViewById(R.id.btnBack);
 
-        // Set the textview variable
+        // Set the textview variables
         txtGeneral = (TextView)findViewById(R.id.concept_general_textView);
         txtGeneralPage = (TextView)findViewById(R.id.general_page_count_textView);
 
-        // Not currently working, so commented out for now until a fix can be made.
-
+        // Makes every link clickable in the textView and changes their color to yellow
         txtGeneral.setMovementMethod(BetterLinkMovementMethod.getInstance());
         txtGeneral.setLinkTextColor(Color.YELLOW);
+
+        spinner = findViewById(R.id.spinner);
+
+        spinner.setOnItemSelectedListener(this);
+
+        String[] pages = getResources().getStringArray(R.array.general_pages);
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this,
+                android.R.layout.simple_list_item_1, pages) {
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView,
+                                @NonNull ViewGroup parent) {
+                // this part is needed for hiding the original view
+                View view = super.getView(position, convertView, parent);
+                view.setVisibility(View.GONE);
+                return view;
+            }
+        };
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+
 
         btnCards.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +114,21 @@ public class RuleBookGeneral extends AppCompatActivity {
         btnGeneralMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeText(txtGeneralSection);
+
+                if (txtGeneralSection < 24) {
+
+                    txtGeneral.setText(pageParagraphs[txtGeneralSection]);
+                    txtGeneralPage.setText(pageNumbers[txtGeneralSection]);
+                    txtGeneralSection ++;
+
+                } else {
+                    txtGeneralSection = 0;
+                    txtGeneral.setText(pageParagraphs[txtGeneralSection]);
+                    txtGeneralPage.setText(pageNumbers[txtGeneralSection]);
+                }
+
+                scrollAnim();
+
             }
         });
 
@@ -81,252 +138,22 @@ public class RuleBookGeneral extends AppCompatActivity {
                 if (txtGeneralSection <= 1) {
                     // Do nothing
                 } else {
-                    changeText(txtGeneralSection - 2);
+                    txtGeneralSection -= 2;
+                    txtGeneral.setText(pageParagraphs[txtGeneralSection]);
+                    txtGeneralPage.setText(pageNumbers[txtGeneralSection]);
+                    txtGeneralSection ++;
+                    scrollAnim();
                 }
             }
         });
     }
 
-    // Test for less code
-
-//        if (txtGeneralSection < 30) {
-//
-//            String generalRules = "R.string.general_rules_part_" + String.valueOf(txtGeneralSection);
-//            string = getString(Integer.parseInt(generalRules));
-////            string = String.valueOf(R.string.general_rules_part_2);
-//            txtGeneral.setText(string);
-//            txtGeneralSection++;
-//        }
-
-    private int changeText(int Section) {
-        switch (Section) {
-            case 0:
-                string = getString(R.string.general_rules_part_1);
-                pageCount = getString(R.string.page_1);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 1;
-                break;
-            case 1:
-                string = getString(R.string.general_rules_part_2);
-                pageCount = getString(R.string.page_2);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 2;
-                break;
-            case 2:
-                string = getString(R.string.general_rules_part_3);
-                pageCount = getString(R.string.page_3);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 3;
-                break;
-            case 3:
-                string = getString(R.string.general_rules_part_4);
-                pageCount = getString(R.string.page_4);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 4;
-                break;
-            case 4:
-                string = getString(R.string.general_rules_part_5);
-                pageCount = getString(R.string.page_5);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 5;
-                break;
-            case 5:
-                string = getString(R.string.general_rules_part_6);
-                pageCount = getString(R.string.page_6);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 6;
-                break;
-            case 6:
-                string = getString(R.string.general_rules_part_7);
-                pageCount = getString(R.string.page_7);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 7;
-                break;
-            case 7:
-                string = getString(R.string.general_rules_part_8);
-                pageCount = getString(R.string.page_8);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 8;
-                break;
-            case 8:
-                string = getString(R.string.general_rules_part_9);
-                pageCount = getString(R.string.page_9);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 9;
-                break;
-            case 9:
-                string = getString(R.string.general_rules_part_10);
-                pageCount = getString(R.string.page_10);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 10;
-                break;
-            case 10:
-                string = getString(R.string.general_rules_part_11);
-                pageCount = getString(R.string.page_11);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 11;
-                break;
-            case 11:
-                string = getString(R.string.general_rules_part_12);
-                pageCount = getString(R.string.page_12);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 12;
-                break;
-            case 12:
-                string = getString(R.string.general_rules_part_13);
-                pageCount = getString(R.string.page_13);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 13;
-                break;
-            case 13:
-                string = getString(R.string.general_rules_part_14);
-                pageCount = getString(R.string.page_14);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 14;
-                break;
-            case 14:
-                string = getString(R.string.general_rules_part_15);
-                pageCount = getString(R.string.page_15);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 15;
-                break;
-            case 15:
-                string = getString(R.string.general_rules_part_16);
-                pageCount = getString(R.string.page_16);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 16;
-                break;
-            case 16:
-                string = getString(R.string.general_rules_part_17);
-                pageCount = getString(R.string.page_17);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 17;
-                break;
-            case 17:
-                string = getString(R.string.general_rules_part_18);
-                pageCount = getString(R.string.page_18);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 18;
-                break;
-            case 18:
-                string = getString(R.string.general_rules_part_19);
-                pageCount = getString(R.string.page_19);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 19;
-                break;
-            case 19:
-                string = getString(R.string.general_rules_part_20);
-                pageCount = getString(R.string.page_20);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 20;
-                break;
-            case 20:
-                string = getString(R.string.general_rules_part_21);
-                pageCount = getString(R.string.page_21);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 21;
-                break;
-            case 21:
-                string = getString(R.string.general_rules_part_22);
-                pageCount = getString(R.string.page_22);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 22;
-                break;
-            case 22:
-                string = getString(R.string.general_rules_part_23);
-                pageCount = getString(R.string.page_23);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 23;
-                break;
-            case 23:
-                string = getString(R.string.general_rules_part_24);
-                pageCount = getString(R.string.page_24);
-
-                txtGeneral.setText(string);
-                txtGeneralPage.setText(pageCount);
-
-                txtGeneralSection = 0;
-                break;
-        }
-
+    // Scroll animation
+    private void scrollAnim() {
         int generalScrollViewBottom = generalScrollView.getBottom();
 
         ObjectAnimator objectAnimator = ObjectAnimator.ofInt(generalScrollView, "scrollY", generalScrollViewBottom, 0).setDuration(1000);
         objectAnimator.start();
-
-        txtGeneral.setMovementMethod(BetterLinkMovementMethod.getInstance());
-        BetterLinkMovementMethod.linkify(Linkify.ALL, txtGeneral);
-
-        return txtGeneralSection;
     }
 
     @Override
@@ -355,5 +182,19 @@ public class RuleBookGeneral extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (parent.getId() == R.id.spinner) {
+            int valueFromSpinner = Integer.parseInt(parent.getItemAtPosition(position).toString());
+            txtGeneral.setText(pageParagraphs[(valueFromSpinner - 1)]);
+            txtGeneralPage.setText(pageNumbers[(valueFromSpinner - 1)]);
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

@@ -1255,4 +1255,9 @@
         ∙ End step
         \n
         ∙ Cleanup step—Damaged creatures on the battlefield heal.</string>
+    <string name="contents">Contents</string>
+    <string name="game_concepts_title">Game Concepts</string>
+    <string name="general_title">General</string>
+    <string name="rule_book_table_of_contents">Rule book table of contents</string>
+    <string name="Empty"></string>
 </resources>
