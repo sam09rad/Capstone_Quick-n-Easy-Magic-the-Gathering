@@ -7,11 +7,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 public class RuleBookTableOfContents extends AppCompatActivity implements View.OnClickListener {
     private TextView tvGeneral;
     private Class MyActivityName;
+
+
+    private ImageView imageOne;
 
 
     @Override
@@ -23,6 +30,16 @@ public class RuleBookTableOfContents extends AppCompatActivity implements View.O
 
         // bind listeners
         tvGeneral.setOnClickListener(this);
+
+        imageOne = findViewById(R.id.image_one);
+
+
+
+        // for gif
+        Glide.with(RuleBookTableOfContents.this)
+                .load("https://i.imgur.com/Li7100P.gif")
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(imageOne);
     }
 
 

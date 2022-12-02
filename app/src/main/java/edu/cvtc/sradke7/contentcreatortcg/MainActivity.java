@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         Button cardViewerButton = (Button)findViewById(R.id.cardViewerBtn);
         Button ruleBookButton = (Button)findViewById(R.id.rulebookBtn);
         Button quickStartGuideButton = (Button)findViewById(R.id.quickstartGuideBtn);
+        Button tutorialButton = (Button)findViewById(R.id.tutorialBtn);
 
         cardViewerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, QuickstartGuide.class));
+            }
+        });
+
+        tutorialButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, TutorialWalkthrough.class));
             }
         });
 
