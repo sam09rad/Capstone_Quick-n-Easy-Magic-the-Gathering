@@ -70,7 +70,7 @@ public class RuleBookTableOfContents extends AppCompatActivity implements View.O
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_card_viewer:
-                Intent intent = new Intent(RuleBookTableOfContents.this, CardViewer.class);
+                Intent intent = new Intent(RuleBookTableOfContents.this, CardViewerActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.action_quickstart_guide:

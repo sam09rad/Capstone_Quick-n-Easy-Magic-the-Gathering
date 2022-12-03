@@ -24,7 +24,7 @@ public class QuickstartGuide extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_card_viewer:
-                Intent intent = new Intent(QuickstartGuide.this, CardViewer.class);
+                Intent intent = new Intent(QuickstartGuide.this, CardViewerActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.action_quickstart_guide:

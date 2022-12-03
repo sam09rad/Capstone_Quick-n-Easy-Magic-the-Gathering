@@ -8,9 +8,6 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,8 +18,6 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import java.lang.reflect.Field;
 
 import me.saket.bettermovementmethod.BetterLinkMovementMethod;
 
@@ -166,7 +161,7 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_card_viewer:
-                Intent intent = new Intent(RuleBookGeneral.this, CardViewer.class);
+                Intent intent = new Intent(RuleBookGeneral.this, CardViewerActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.action_quickstart_guide:

@@ -14,10 +14,17 @@ public class CardResponse {
     public void setCardName(String cardName) {
         this.cardName = cardName;
     }
-/*
+
     @SerializedName("image_uris")
     private ImageUriResponse imageUri;
-    */
+
+    public ImageUriResponse getImageUri() {
+        return imageUri;
+    }
+
+    public void setImageUri(ImageUriResponse imageUri) {
+        this.imageUri = imageUri;
+    }
 
 }
 

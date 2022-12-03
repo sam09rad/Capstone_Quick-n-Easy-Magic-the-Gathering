@@ -54,7 +54,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".CardViewer"
+            android:name=".CardViewerActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity">
             <meta-data

@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         cardViewerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CardViewer.class));
+                startActivity(new Intent(MainActivity.this, CardViewerActivity.class));
             }
         });
 
