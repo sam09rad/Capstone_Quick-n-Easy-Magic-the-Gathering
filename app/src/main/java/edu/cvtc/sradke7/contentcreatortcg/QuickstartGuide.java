@@ -32,7 +32,7 @@ public class QuickstartGuide extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.action_rule_book_viewer:
-                intent = new Intent(QuickstartGuide.this, RuleBookGeneral.class);
+                intent = new Intent(QuickstartGuide.this, RuleBookTableOfContents.class);
                 startActivity(intent);
                 return true;
             default:

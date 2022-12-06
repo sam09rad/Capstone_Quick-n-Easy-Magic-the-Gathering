@@ -78,7 +78,7 @@ public class RuleBookTableOfContents extends AppCompatActivity implements View.O
                 startActivity(intent);
                 return true;
             case R.id.action_rule_book_viewer:
-                intent = new Intent(RuleBookTableOfContents.this, RuleBookGeneral.class);
+                intent = new Intent(RuleBookTableOfContents.this, RuleBookTableOfContents.class);
                 startActivity(intent);
                 return true;
             default:

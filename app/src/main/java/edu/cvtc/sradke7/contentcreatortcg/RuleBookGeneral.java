@@ -36,6 +36,7 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
     ScrollView
             generalScrollView;
     private Spinner spinner;
+
     // Pages array
     private int[] pageParagraphs = {
             R.string.general_rules_part_1, R.string.general_rules_part_2, R.string.general_rules_part_3, R.string.general_rules_part_4, R.string.general_rules_part_5,
@@ -96,15 +97,12 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-
-
         btnCards.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(RuleBookGeneral.this, RuleBookCards.class));
             }
         });
-
         // Pattern to follow for changing the text
         btnGeneralMore.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,9 +119,7 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
                     txtGeneral.setText(pageParagraphs[txtGeneralSection]);
                     txtGeneralPage.setText(pageNumbers[txtGeneralSection]);
                 }
-
                 scrollAnim();
-
             }
         });
 
@@ -169,7 +165,7 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
                 startActivity(intent);
                 return true;
             case R.id.action_rule_book_viewer:
-                intent = new Intent(RuleBookGeneral.this, RuleBookGeneral.class);
+                intent = new Intent(RuleBookGeneral.this, RuleBookTableOfContents.class);
                 startActivity(intent);
                 return true;
             default:

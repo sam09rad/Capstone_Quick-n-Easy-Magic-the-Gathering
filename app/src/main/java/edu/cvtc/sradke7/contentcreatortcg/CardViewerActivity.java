@@ -82,7 +82,7 @@ public class CardViewerActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.action_rule_book_viewer:
-                intent = new Intent(CardViewerActivity.this, RuleBookGeneral.class);
+                intent = new Intent(CardViewerActivity.this, RuleBookTableOfContents.class);
                 startActivity(intent);
                 return true;
             default:
