@@ -17,10 +17,6 @@ public class RuleBookTableOfContents extends AppCompatActivity implements View.O
     private TextView tvGeneral;
     private Class MyActivityName;
 
-
-    private ImageView imageOne;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,18 +26,7 @@ public class RuleBookTableOfContents extends AppCompatActivity implements View.O
 
         // bind listeners
         tvGeneral.setOnClickListener(this);
-
-        imageOne = findViewById(R.id.image_one);
-
-
-
-        // for gif
-        Glide.with(RuleBookTableOfContents.this)
-                .load("https://i.imgur.com/Li7100P.gif")
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imageOne);
     }
-
 
     @Override
     public void onClick(View view) {

@@ -8,6 +8,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +19,9 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Arrays;
 
 import me.saket.bettermovementmethod.BetterLinkMovementMethod;
 
@@ -30,6 +34,7 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
             btnBack;
     private TextView
             txtGeneral,
+            txtGeneralHeader,
             txtGeneralPage;
     private int
             txtGeneralSection = 1;
@@ -37,7 +42,14 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
             generalScrollView;
     private Spinner spinner;
 
-    // Pages array
+    // Pages arrays
+    private int[] pageSectionHeaders = {
+            R.string.general_header_1, R.string.general_header_2, R.string.general_header_3, R.string.general_header_4, R.string.general_header_5,
+            R.string.general_header_6, R.string.general_header_7, R.string.general_header_8, R.string.general_header_9, R.string.general_header_10,
+            R.string.general_header_11, R.string.general_header_12, R.string.general_header_13, R.string.general_header_14, R.string.general_header_15,
+            R.string.general_header_16, R.string.general_header_17, R.string.general_header_18, R.string.general_header_19, R.string.general_header_20,
+            R.string.general_header_21, R.string.general_header_22, R.string.general_header_23, R.string.general_header_24
+    };
     private int[] pageParagraphs = {
             R.string.general_rules_part_1, R.string.general_rules_part_2, R.string.general_rules_part_3, R.string.general_rules_part_4, R.string.general_rules_part_5,
             R.string.general_rules_part_6, R.string.general_rules_part_7, R.string.general_rules_part_8, R.string.general_rules_part_9, R.string.general_rules_part_10,
@@ -70,6 +82,7 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
         btnBack = (Button)findViewById(R.id.btnBack);
 
         // Set the textview variables
+        txtGeneralHeader = (TextView)findViewById(R.id.general_header_textView);
         txtGeneral = (TextView)findViewById(R.id.concept_general_textView);
         txtGeneralPage = (TextView)findViewById(R.id.general_page_count_textView);
 
@@ -79,9 +92,7 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
 
         spinner = findViewById(R.id.spinner);
 
-        spinner.setOnItemSelectedListener(this);
-
-        String[] pages = getResources().getStringArray(R.array.general_pages);
+        final String[] pages = getResources().getStringArray(R.array.general_pages);
         ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this,
                 android.R.layout.simple_list_item_1, pages) {
             @NonNull
@@ -91,11 +102,15 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
                 // this part is needed for hiding the original view
                 View view = super.getView(position, convertView, parent);
                 view.setVisibility(View.GONE);
+
                 return view;
             }
         };
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(this);
 
         btnCards.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +125,7 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
 
                 if (txtGeneralSection < 24) {
 
+                    txtGeneralHeader.setText(pageSectionHeaders[txtGeneralSection]);
                     txtGeneral.setText(pageParagraphs[txtGeneralSection]);
                     txtGeneralPage.setText(pageNumbers[txtGeneralSection]);
                     txtGeneralSection ++;
@@ -130,6 +146,7 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
                     // Do nothing
                 } else {
                     txtGeneralSection -= 2;
+                    txtGeneralHeader.setText(pageSectionHeaders[txtGeneralSection]);
                     txtGeneral.setText(pageParagraphs[txtGeneralSection]);
                     txtGeneralPage.setText(pageNumbers[txtGeneralSection]);
                     txtGeneralSection ++;
@@ -177,10 +194,19 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        int valueFromSpinner = Integer.parseInt(parent.getItemAtPosition(position).toString());
+
+        // If user selects a different page from the list, this will
+        // change the page to the one selected then, prep the next
+        // page if they then use the buttons
         if (parent.getId() == R.id.spinner) {
-            int valueFromSpinner = Integer.parseInt(parent.getItemAtPosition(position).toString());
-            txtGeneral.setText(pageParagraphs[(valueFromSpinner - 1)]);
-            txtGeneralPage.setText(pageNumbers[(valueFromSpinner - 1)]);
+            txtGeneralSection = (valueFromSpinner - 1);
+
+            txtGeneralHeader.setText(pageSectionHeaders[txtGeneralSection]);
+            txtGeneral.setText(pageParagraphs[txtGeneralSection]);
+            txtGeneralPage.setText(pageNumbers[txtGeneralSection]);
+
+            txtGeneralSection = valueFromSpinner;
         }
     }
 

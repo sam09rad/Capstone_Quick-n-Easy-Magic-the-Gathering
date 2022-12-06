@@ -19,6 +19,32 @@
         You and your opponent each start with 20 life, and you’ll each need a way to track your life total (such as dice or a pencil and paper). Reduce your opponent’s life total to 0 and you win the game!
     </string>
 
+    <!--  General Rules Section Headers  -->
+    <string name="general_header_1">100. General</string>
+    <string name="general_header_2">101. The Magic Golden Rules</string>
+    <string name="general_header_3">102. Players</string>
+    <string name="general_header_4">103. Starting the Game</string>
+    <string name="general_header_5">104. Ending the Game</string>
+    <string name="general_header_6">105. Colors</string>
+    <string name="general_header_7">106. Mana</string>
+    <string name="general_header_8">107. Numbers and Symbols</string>
+    <string name="general_header_9">108. Cards</string>
+    <string name="general_header_10">109. Objects</string>
+    <string name="general_header_11">110. Permanents</string>
+    <string name="general_header_12">111. Tokens</string>
+    <string name="general_header_13">112. Spells</string>
+    <string name="general_header_14">113. Abilities</string>
+    <string name="general_header_15">114. Emblems</string>
+    <string name="general_header_16">115. Targets</string>
+    <string name="general_header_17">116. Special Actions</string>
+    <string name="general_header_18">117. Timing and Priority</string>
+    <string name="general_header_19">118. Costs</string>
+    <string name="general_header_20">119. Life</string>
+    <string name="general_header_21">120. Damage</string>
+    <string name="general_header_22">121. Drawing a Card</string>
+    <string name="general_header_23">122. Counters</string>
+    <string name="general_header_24">123. Stickers</string>
+
     <!--  General rules  -->
     <string name="general_rules_part_1">
         \t\t
@@ -62,8 +88,6 @@
     </string>
     <string name="general_rules_part_2">
         \t\t
-        101. The Magic Golden Rules
-        \n\n\t\t
         101.1. Whenever a card’s text directly contradicts these rules, the card takes precedence. The card overrides only the rule that applies to that specific situation. The only exception is that a player can concede the game at any time (see rule 104.3a).
         \n\n\t\t
         101.2. When a rule or effect allows or directs something to happen, and another effect states that it can’t happen, the “can’t” effect takes precedence.
@@ -88,8 +112,6 @@
     </string>
     <string name="general_rules_part_3">
         \t\t
-        102. Players
-        \n\n\t\t
         102.1. A player is one of the people in the game. The active player is the player whose turn it is. The other players are nonactive players.
         \n\n\t\t
         102.2. In a two-player game, a player’s opponent is the other player.
@@ -100,8 +122,6 @@
     </string>
     <string name="general_rules_part_4">
         \t\t
-        103. Starting the Game
-        \n\n\t\t
         103.1. At the start of a game, the players determine which one of them will choose who takes the first turn. In the first game of a match (including a single-game match), the players may use any mutually agreeable method (flipping a coin, rolling dice, etc.) to do so. In a match of several games, the loser of the previous game chooses who takes the first turn. If the previous game was a draw, the player who made the choice in that game makes the choice in this game. The player chosen to take the first turn is the starting player. The game’s default turn order begins with the starting player and proceeds clockwise.
         \n\n\t\t
         103.1a In a game using the shared team turns option, there is a starting team rather than a starting player.
@@ -168,8 +188,6 @@
     </string>
     <string name="general_rules_part_5">
         \t\t
-        104. Ending the Game
-        \n\n\t\t
         104.1. A game ends immediately when a player wins, when the game is a draw, or when the game is restarted.
         \n\n\t\t
         104.2. There are several ways to win the game.
@@ -232,8 +250,6 @@
     </string>
     <string name="general_rules_part_6">
         \t\t
-        105. Colors
-        \n\n\t\t
         105.1. There are five colors in the Magic game: white, blue, black, red, and green.
         \n\n\t\t
         105.2. An object can be one or more of the five colors, or it can be no color at all. An object is the color or colors of the mana symbols in its mana cost, regardless of the color of its frame. An object’s color or colors may also be defined by a color indicator or a characteristic-defining ability. See rule 202.2.
@@ -252,8 +268,6 @@
     </string>
     <string name="general_rules_part_7">
         \t\t
-        106. Mana
-        \n\n\t\t
         106.1. Mana is the primary resource in the game. Players spend mana to pay costs, usually when casting spells and activating abilities.
         \n\n\t\t
         106.1a There are five colors of mana: white, blue, black, red, and green.
@@ -299,8 +313,6 @@
     </string>
     <string name="general_rules_part_8">
         \t\t
-        107. Numbers and Symbols
-        \n\n\t\t
         107.1. The only numbers the Magic game uses are integers.
         \n\n\t\t
         107.1a You can’t choose a fractional number, deal fractional damage, gain fractional life, and so on. If a spell or ability could generate a fractional number, the spell or ability will tell you whether to round up or down.
@@ -404,8 +416,6 @@
     </string>
     <string name="general_rules_part_9">
         \t\t
-        108. Cards
-        \n\n\t\t
         108.1. Use the Oracle card reference when determining a card’s wording. A card’s Oracle text can be found using the Gatherer card database at <a href="http://gatherer.wizards.com/">Gatherer.Wizards.com</a>.
         \n\n\t\t
         108.2. When a rule or text on a card refers to a “card,” it means only a Magic card or an object represented by a Magic card.
@@ -430,8 +440,6 @@
     </string>
     z    <string name="general_rules_part_10">
         \t\t
-        109. Objects
-        \n\n\t\t
         109.1. An object is an ability on the stack, a card, a copy of a card, a token, a spell, a permanent, or an emblem.
         \n\n\t\t
         109.2. If a spell or ability uses a description of an object that includes a card type or subtype, but doesn’t include the word “card,” “spell,” “source,” or “scheme,” it means a permanent of that card type or subtype on the battlefield.
@@ -466,8 +474,6 @@
     </string>
     <string name="general_rules_part_11">
         \t\t
-        110. Permanents
-        \n\n\t\t
         110.1. A permanent is a card or token on the battlefield. A permanent remains on the battlefield indefinitely. A card or token becomes a permanent as it enters the battlefield and it stops being a permanent as it’s moved to another zone by an effect or rule.
         \n\n\t\t
         110.2. A permanent’s owner is the same as the owner of the card that represents it (unless it’s a token; see rule 111.2). A permanent’s controller is, by default, the player under whose control it entered the battlefield. Every permanent has a controller.
@@ -499,8 +505,6 @@
     </string>
     <string name="general_rules_part_12">
         \t\t
-        111. Tokens
-        \n\n\t\t
         111.1. Some effects put tokens onto the battlefield. A token is a marker used to represent any permanent that isn’t represented by a card.
         \n\n\t\t
         111.2. The player who creates a token is its owner. The token enters the battlefield under that player’s control.
@@ -548,8 +552,6 @@
     </string>
     <string name="general_rules_part_13">
         \t\t
-        112. Spells
-        \n\n\t\t
         112.1. A spell is a card on the stack. As the first step of being cast (see rule 601, “Casting Spells”), the card becomes a spell and is moved to the top of the stack from the zone it was in, which is usually its owner’s hand. (See rule 405, “Stack.”) A spell remains on the stack as a spell until it resolves (see rule 608, “Resolving Spells and Abilities”), is countered (see rule 701.5), or otherwise leaves the stack. For more information, see section 6, “Spells, Abilities, and Effects.”
         \n\n\t\t
         112.1a A copy of a spell is also a spell, even if it has no card associated with it. See rule 707.10.
@@ -567,8 +569,6 @@
     </string>
     <string name="general_rules_part_14">
         \t\t
-        113. Abilities
-        \n\n\t\t
         113.1. An ability can be one of three things:
         \n\n\t\t
         113.1a An ability can be a characteristic an object has that lets it affect the game. An object’s abilities are defined by its rules text or by the effect that created it. Abilities can also be granted to objects by rules or effects. (Effects that grant abilities usually use the words “has,” “have,” “gains,” or “gain.”) Abilities generate effects. (See rule 609, “Effects.”)
@@ -657,8 +657,6 @@
     </string>
     <string name="general_rules_part_15">
         \t\t
-        114. Emblems
-        \n\n\t\t
         114.1. Some effects put emblems into the command zone. An emblem is a marker used to represent an object that has one or more abilities, but no other characteristics.
         \n\n\t\t
         114.2. An effect that creates an emblem is written “[Player] gets an emblem with [ability].” This means that [player] puts an emblem with [ability] into the command zone. The emblem is both owned and controlled by that player.
@@ -671,8 +669,6 @@
     </string>
     <string name="general_rules_part_16">
         \t\t
-        115. Targets
-        \n\n\t\t
         115.1. Some spells and abilities require their controller to choose one or more targets for them. The targets are object(s) and/or player(s) the spell or ability will affect. These targets are declared as part of the process of putting the spell or ability on the stack. The targets can’t be changed except by another spell or ability that explicitly says it can do so.
         \n\n\t\t
         115.1a An instant or sorcery spell is targeted if its spell ability identifies something it will affect by using the phrase “target [something],” where the “something” is a phrase that describes an object and/or player. The target(s) are chosen as the spell is cast; see rule 601.2c. (If an activated or triggered ability of an instant or sorcery uses the word target, that ability is targeted, but the spell is not.)
@@ -729,8 +725,6 @@
     </string>
     <string name="general_rules_part_17">
         \t\t
-        116. Special Actions
-        \n\n\t\t
         116.1. Special actions are actions a player may take when they have priority that don’t use the stack. These are not to be confused with turn-based actions and state-based actions, which the game generates automatically. (See rule 703, “Turn-Based Actions,” and rule 704, “State-Based Actions.”)
         \n\n\t\t
         116.2. There are ten special actions:
@@ -759,8 +753,6 @@
     </string>
     <string name="general_rules_part_18">
         \t\t
-        117. Timing and Priority
-        \n\n\t\t
         117.1. Unless a spell or ability is instructing a player to take an action, which player can take actions at any given time is determined by a system of priority. The player with priority may cast spells, activate abilities, and take special actions.
         \n\n\t\t
         117.1a A player may cast an instant spell any time they have priority. A player may cast a noninstant spell during their main phase any time they have priority and the stack is empty.
@@ -803,8 +795,6 @@
     </string>
     <string name="general_rules_part_19">
         \t\t
-        118. Costs
-        \n\n\t\t
         118.1. A cost is an action or payment necessary to take another action or to stop another action from taking place. To pay a cost, a player carries out the instructions specified by the spell, ability, or effect that contains that cost.
         \n\n\t\t
         118.2. If a cost includes a mana payment, the player paying the cost has a chance to activate mana abilities. Paying the cost to cast a spell or activate an activated ability follows the steps in rules 601.2f–h.
@@ -887,8 +877,6 @@
     </string>
     <string name="general_rules_part_20">
         \t\t
-        119. Life
-        \n\n\t\t
         119.1. Each player begins the game with a starting life total of 20. Some variant games have different starting life totals.
         \n\n\t\t
         119.1a In a Two-Headed Giant game, each team’s starting life total is 30. See rule 810, “Two-Headed Giant Variant.”
@@ -925,8 +913,6 @@
     </string>
     <string name="general_rules_part_21">
         \t\t
-        120. Damage
-        \n\n\t\t
         120.1. Objects can deal damage to creatures, planeswalkers, and players. This is generally detrimental to the object or player that receives that damage. An object that deals damage is the source of that damage.
         \n\n\t\t
         120.1a Damage can’t be dealt to an object that’s neither a creature nor a planeswalker.
@@ -978,8 +964,6 @@
     </string>
     <string name="general_rules_part_22">
         \t\t
-        121. Drawing a Card
-        \n\n\t\t
         121.1. A player draws a card by putting the top card of their library into their hand. This is done as a turn-based action during each player’s draw step. It may also be done as part of a cost or effect of a spell or ability.
         \n\n\t\t
         121.2. Cards may only be drawn one at a time. If a player is instructed to draw multiple cards, that player performs that many individual card draws.
@@ -1016,8 +1000,6 @@
     </string>
     <string name="general_rules_part_23">
         \t\t
-        122. Counters
-        \n\n\t\t
         122.1. A counter is a marker placed on an object or player that modifies its characteristics and/or interacts with a rule, ability, or effect. Counters are not objects and have no characteristics. Notably, a counter is not a token, and a token is not a counter. Counters with the same name or description are interchangeable.
         \n\n\t\t
         122.1a A +X/+Y counter on a creature or on a creature card in a zone other than the battlefield, where X and Y are numbers, adds X to that object’s power and Y to that object’s toughness. Similarly, -X/-Y counters subtract from power and toughness. See rule 613.4c.
@@ -1050,8 +1032,6 @@
     </string>
     <string name="general_rules_part_24">
         \t\t
-        123. Stickers
-        \n\n\t\t
         123.1. A sticker is a marker placed on an object that modifies its characteristics and/or interacts with a rule, ability, or effect. Stickers are not objects. Notably, a sticker is not a counter or a token. Changes to an object from stickers are not part of its copiable characteristics. There are four kinds of stickers: name stickers; ability stickers; power and toughness stickers; and art stickers.
         \n\n\t\t
         123.2. Stickers are found in boosters of the Unfinity expansion on numbered inserts. Each insert has a predetermined combination of stickers. Any rule that refers to a sticker sheet refers to the specific combination of stickers found on one of those inserts. Sticker sheets are not cards and have no characteristics. Each sticker sheet can be found at <a href="https://gatherer.wizards.com/">Gatherer.Wizards.com</a>.
@@ -1152,6 +1132,7 @@
     <string name="page_22">Page: 22</string>
     <string name="page_23">Page: 23</string>
     <string name="page_24">Page: 24</string>
+
     <string name="types_of_cards">Types Of Cards</string>
     <string name="types_of_cards_blurb">
         \t\t
@@ -1257,7 +1238,7 @@
         ∙ Cleanup step—Damaged creatures on the battlefield heal.</string>
     <string name="contents">Contents</string>
     <string name="game_concepts_title">Game Concepts</string>
-    <string name="general_title">General</string>
+    <string name="general_title"><u>General</u></string>
     <string name="rule_book_table_of_contents">Rule book table of contents</string>
     <string name="Empty"></string>
     <string name="search_card_btn">Search</string>
