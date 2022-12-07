@@ -1242,4 +1242,33 @@
     <string name="rule_book_table_of_contents">Rule book table of contents</string>
     <string name="Empty"></string>
     <string name="search_card_btn">Search</string>
+
+    <string name="walkthrough_header_1">header test 1</string>
+    <string name="walkthrough_header_2">header test 2</string>
+
+
+    <!--  Turn Walkthrough  -->
+    <string name="walkthrough_paragraph_1">
+
+            test 1
+
+    </string>
+
+    <string name="walkthrough_paragraph_2">
+
+            test 2
+
+    </string>
+
+    <string name="walkthrough_page_1">
+
+        tast 1 Beginning
+
+    </string>
+
+    <string name="walkthrough_page_2">
+
+        tast 1 Middle
+
+    </string>
 </resources>

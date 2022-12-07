@@ -37,4 +37,10 @@
         <item>23</item>
         <item>24</item>
     </string-array>
+
+    <!--  Page numbers for spinner  -->
+    <string-array name="walkthrough_pages">
+        <item>Beginning</item>
+        <item>Middle</item>
+    </string-array>
 </resources>
