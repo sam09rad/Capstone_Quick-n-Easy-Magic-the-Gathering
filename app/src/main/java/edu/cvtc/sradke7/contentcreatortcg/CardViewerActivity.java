@@ -63,22 +63,18 @@ public class CardViewerActivity extends AppCompatActivity {
 
     }
 
-
     // Top of page menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        menu.findItem(R.id.action_card_viewer).setVisible(false);
         return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_card_viewer:
-                Intent intent = new Intent(CardViewerActivity.this, CardViewerActivity.class);
-                startActivity(intent);
-                return true;
             case R.id.action_quickstart_guide:
-                intent = new Intent(CardViewerActivity.this, QuickstartGuide.class);
+                Intent intent = new Intent(CardViewerActivity.this, QuickstartGuide.class);
                 startActivity(intent);
                 return true;
             case R.id.action_rule_book_viewer:
@@ -132,9 +128,6 @@ public class CardViewerActivity extends AppCompatActivity {
                         cardImage.setVisibility(View.VISIBLE);
 
                     }
-
-
-
                 } else {
                     Toast.makeText(CardViewerActivity.this, "No Results Found.", Toast.LENGTH_LONG).show();
                 }
@@ -145,7 +138,5 @@ public class CardViewerActivity extends AppCompatActivity {
                 Toast.makeText(CardViewerActivity.this, "Unexpected Error Occurred.", Toast.LENGTH_LONG).show();
             }
         });
-
     }
-
 }

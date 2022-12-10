@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/walkthrough_background"
+    android:background="@drawable/walkthrough_background2"
     tools:context=".RuleBookGeneral">
 
     <ScrollView
@@ -13,75 +13,14 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/walkthrough_header_textView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:background="#99000000"
-                android:padding="5dp"
-                android:text="Untap step"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/turn_walkthrough_textView" />
-
-            <TextView
-                android:id="@+id/walkthrough_page_count_textView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
-                android:background="#99000000"
-                android:padding="5dp"
-                android:text="Beginning Phase"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/turn_walkthrough_textView" />
-
-            <Spinner
-                android:id="@+id/walkthroughSpinner"
-                android:layout_width="94dp"
-                android:layout_height="0dp"
-                android:maxHeight="100dp"
-                android:minHeight="48dp"
-                android:prompt="@string/Empty"
-                app:layout_constraintBottom_toBottomOf="@id/walkthrough_page_count_textView"
-                app:layout_constraintStart_toStartOf="@id/walkthrough_page_count_textView"
-                app:layout_constraintTop_toTopOf="@id/walkthrough_page_count_textView"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/walkthrough_general_textView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
-                android:background="#99000000"
-                android:linksClickable="true"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="5dp"
-                android:text="test"
-                android:textColor="#FFFFFF"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/walkthrough_header_textView" />
 
             <TextView
                 android:id="@+id/turn_walkthrough_textView"
@@ -89,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Turn Walkthrough"
+                android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -97,46 +37,25 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/btnWalkthroughCards"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="492dp"
-                android:layout_marginEnd="36dp"
-                android:text="@string/button_cards"
-                app:layout_constraintEnd_toEndOf="@+id/walkthrough_general_textView"
-                app:layout_constraintTop_toBottomOf="@+id/walkthrough_general_textView" />
-
-            <Button
-                android:id="@+id/btnWalkthroughBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="492dp"
-                android:text="@string/back"
-                app:layout_constraintStart_toStartOf="@id/walkthrough_general_textView"
-                app:layout_constraintTop_toBottomOf="@+id/walkthrough_general_textView" />
-
-            <Button
                 android:id="@+id/btnWalkthroughMore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="492dp"
+                android:layout_marginTop="400dp"
                 android:text="@string/more"
-                app:layout_constraintEnd_toStartOf="@id/btnWalkthroughCards"
-                app:layout_constraintHorizontal_bias="0.686"
-                app:layout_constraintStart_toEndOf="@+id/btnWalkthroughBack"
-                app:layout_constraintTop_toBottomOf="@id/walkthrough_general_textView" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.459"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/turn_walkthrough_textView" />
 
             <ImageView
                 android:id="@+id/gif_one"
                 android:layout_width="411dp"
                 android:layout_height="395dp"
-                android:layout_marginTop="56dp"
-                android:contentDescription="image"
+                android:layout_marginTop="8dp"
+                android:contentDescription="gif of Magic the Gathering turn walkthroughs"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/walkthrough_general_textView" />
+                app:layout_constraintTop_toBottomOf="@+id/turn_walkthrough_textView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
