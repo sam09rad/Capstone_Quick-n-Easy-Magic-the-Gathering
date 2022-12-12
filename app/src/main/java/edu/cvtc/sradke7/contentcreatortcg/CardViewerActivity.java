@@ -2,6 +2,8 @@ package edu.cvtc.sradke7.contentcreatortcg;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -21,6 +23,7 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 
+import edu.cvtc.sradke7.contentcreatortcg.adapter.CardListAdapter;
 import edu.cvtc.sradke7.contentcreatortcg.api.models.CardResponse;
 import edu.cvtc.sradke7.contentcreatortcg.api.models.SearchResponse;
 import edu.cvtc.sradke7.contentcreatortcg.api.service.CardServiceApi;
@@ -32,6 +35,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CardViewerActivity extends AppCompatActivity {
 
+    RecyclerView cardRecyclerView;
     ImageView cardImage = null;
     ProgressBar progressBar = null;
 
@@ -41,9 +45,10 @@ public class CardViewerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_card_viewer);
 
         progressBar = findViewById(R.id.progress_bar);
-        cardImage = findViewById(R.id.card_image);
         EditText searchBar = findViewById(R.id.search_bar);
         Button searchBtn = findViewById(R.id.search_card_btn);
+        cardRecyclerView = findViewById(R.id.recycler_view);
+        cardRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,9 +58,11 @@ public class CardViewerActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.VISIBLE);
                     fetchCard(searchBar.getText().toString());
 
+
                 } else {
 
                     Toast.makeText(CardViewerActivity.this, "Please enter valid search term.", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
 
                 }
             }
@@ -99,43 +106,25 @@ public class CardViewerActivity extends AppCompatActivity {
 
         Call<SearchResponse> searchRequest = service.fetchCard(searchTerm);
 
-        CardResponse cardResponse = null;
-
         searchRequest.enqueue(new Callback<SearchResponse>() {
             @Override
             public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
                 if (response.isSuccessful()) {
-
-                    if (cardImage != null) {
-
-                        Glide.with(CardViewerActivity.this)
-                                .load(response.body().getCards().get(0).getImageUri().getImageUrl())
-                                .listener(new RequestListener<Drawable>() {
-                                    @Override
-                                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                                        progressBar.setVisibility(View.GONE);
-                                        return false;
-                                    }
-
-                                    @Override
-                                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                                        progressBar.setVisibility(View.GONE);
-                                        return false;
-                                    }
-                                })
-                                .into(cardImage);
-
-                        cardImage.setVisibility(View.VISIBLE);
-
+                    if(response.body() != null) {
+                        CardListAdapter adapter = new CardListAdapter(CardViewerActivity.this, response.body().getCards());
+                        cardRecyclerView.setAdapter(adapter);
+                        progressBar.setVisibility(View.GONE);
                     }
                 } else {
                     Toast.makeText(CardViewerActivity.this, "No Results Found.", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<SearchResponse> call, Throwable t) {
                 Toast.makeText(CardViewerActivity.this, "Unexpected Error Occurred.", Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
             }
         });
     }
