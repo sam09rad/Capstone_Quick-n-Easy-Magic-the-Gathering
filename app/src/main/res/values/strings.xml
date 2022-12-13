@@ -1542,4 +1542,5 @@
     <string name="search_card_btn">Search</string>
     <string name="walkthrough_restart_set_text">Restart</string>
     <string name="cards_2">Cards 2</string>
+    <string name="example">Example</string>
 </resources>

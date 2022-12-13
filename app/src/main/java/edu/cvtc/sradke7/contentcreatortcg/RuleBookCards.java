@@ -7,17 +7,24 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -43,6 +50,8 @@ public class RuleBookCards extends AppCompatActivity implements AdapterView.OnIt
     ScrollView
             partsOfCardsScrollView;
     private Spinner partsOfCardsSpinner;
+
+    int image = R.drawable.how_to_read;
 
     // Pages arrays
     private int[] pageSectionHeaders = {
@@ -108,47 +117,39 @@ public class RuleBookCards extends AppCompatActivity implements AdapterView.OnIt
 
         partsOfCardsSpinner.setOnItemSelectedListener(this);
 
-        btnCardsTypes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnCardsTypes.setOnClickListener(view -> {
 //                startActivity(new Intent(RuleBookPartsOfCards.this, RuleBookCards.class));
-                Toast.makeText(RuleBookCards.this, "Under development", Toast.LENGTH_SHORT).show();
-            }
+//                Toast.makeText(RuleBookCards.this, "Under development", Toast.LENGTH_SHORT).show();
+            showImage();
         });
         // Pattern to follow for changing the text
-        btnCardsMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnCardsMore.setOnClickListener(view -> {
 
-                if (txtPartsOfCardsSection < 13) {
+            if (txtPartsOfCardsSection < 13) {
 
-                    txtPartsOfCardsHeader.setText(pageSectionHeaders[txtPartsOfCardsSection]);
-                    txtPartsOfCards.setText(pageParagraphs[txtPartsOfCardsSection]);
-                    txtPartsOfCardsPage.setText(pageNumbers[txtPartsOfCardsSection]);
-                    txtPartsOfCardsSection ++;
+                txtPartsOfCardsHeader.setText(pageSectionHeaders[txtPartsOfCardsSection]);
+                txtPartsOfCards.setText(pageParagraphs[txtPartsOfCardsSection]);
+                txtPartsOfCardsPage.setText(pageNumbers[txtPartsOfCardsSection]);
+                txtPartsOfCardsSection ++;
 
-                } else {
-                    txtPartsOfCardsSection = 0;
-                    txtPartsOfCards.setText(pageParagraphs[txtPartsOfCardsSection]);
-                    txtPartsOfCardsPage.setText(pageNumbers[txtPartsOfCardsSection]);
-                }
-                scrollAnim();
+            } else {
+                txtPartsOfCardsSection = 0;
+                txtPartsOfCards.setText(pageParagraphs[txtPartsOfCardsSection]);
+                txtPartsOfCardsPage.setText(pageNumbers[txtPartsOfCardsSection]);
             }
+            scrollAnim();
         });
 
-        btnCardsBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (txtPartsOfCardsSection <= 1) {
-                    // Do nothing
-                } else {
-                    txtPartsOfCardsSection -= 2;
-                    txtPartsOfCardsHeader.setText(pageSectionHeaders[txtPartsOfCardsSection]);
-                    txtPartsOfCards.setText(pageParagraphs[txtPartsOfCardsSection]);
-                    txtPartsOfCardsPage.setText(pageNumbers[txtPartsOfCardsSection]);
-                    txtPartsOfCardsSection ++;
-                    scrollAnim();
-                }
+        btnCardsBack.setOnClickListener(view -> {
+            if (txtPartsOfCardsSection <= 1) {
+                // Do nothing
+            } else {
+                txtPartsOfCardsSection -= 2;
+                txtPartsOfCardsHeader.setText(pageSectionHeaders[txtPartsOfCardsSection]);
+                txtPartsOfCards.setText(pageParagraphs[txtPartsOfCardsSection]);
+                txtPartsOfCardsPage.setText(pageNumbers[txtPartsOfCardsSection]);
+                txtPartsOfCardsSection ++;
+                scrollAnim();
             }
         });
     }
@@ -211,5 +212,24 @@ public class RuleBookCards extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public void showImage() {
+        Dialog builder = new Dialog(this);
+        builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        builder.getWindow().setBackgroundDrawable(
+                new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        builder.setOnDismissListener(dialogInterface -> {
+            //nothing;
+        });
+
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(image);
+        builder.addContentView(imageView, new RelativeLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        builder.show();
+
+        imageView.setOnClickListener(view -> builder.dismiss());
     }
 }
