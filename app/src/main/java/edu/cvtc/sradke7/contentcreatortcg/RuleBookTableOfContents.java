@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RuleBookTableOfContents extends AppCompatActivity implements View.OnClickListener {
-    private TextView tvGeneral;
+    private TextView tvGeneral, tvPartsOfCards;
     private Class MyActivityName;
 
     @Override
@@ -19,9 +19,11 @@ public class RuleBookTableOfContents extends AppCompatActivity implements View.O
         setContentView(R.layout.activity_rule_book_table_of_contents);
 
         tvGeneral = (TextView)findViewById(R.id.general_link_textView);
+        tvPartsOfCards = (TextView)findViewById(R.id.cards_link_textView);
 
         // bind listeners
         tvGeneral.setOnClickListener(this);
+        tvPartsOfCards.setOnClickListener(this);
     }
 
     @Override
@@ -31,9 +33,9 @@ public class RuleBookTableOfContents extends AppCompatActivity implements View.O
             case R.id.general_link_textView:
                 MyActivityName = RuleBookGeneral.class;
                 break;
-//            case R.id.button_two:
-//                // do something else
-//                break;
+            case R.id.cards_link_textView:
+                MyActivityName = RuleBookCards.class;
+                break;
 //            case R.id.button_three:
 //                // i'm lazy, do nothing
 //                break;
