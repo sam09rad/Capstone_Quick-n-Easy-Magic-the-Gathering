@@ -44,6 +44,8 @@ public class CardViewerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_viewer);
 
+
+
         progressBar = findViewById(R.id.progress_bar);
         EditText searchBar = findViewById(R.id.search_bar);
         Button searchBtn = findViewById(R.id.search_card_btn);

@@ -5,8 +5,10 @@
     android:id="@id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_list"
-    tools:context=".CardViewerActivity">
+    android:background="@drawable/cardviewerimagereplace"
+    tools:context=".CardViewerActivity"
+
+    >
 
 <!-- TODO: Add TextView to display card amount from results. (Ex. Showing 105 results) -->
 
@@ -22,7 +24,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        android:alpha="100"/>
 
     <EditText
         android:id="@+id/search_bar"
