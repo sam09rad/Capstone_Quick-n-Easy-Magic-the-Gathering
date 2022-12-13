@@ -1233,17 +1233,12 @@
         205.1b Some effects change an object’s card type, supertype, or subtype but specify that the object retains a prior card type, supertype, or subtype. In such cases, all the object’s prior card types, supertypes, and subtypes are retained. This rule applies to effects that use the phrase “in addition to its types” or that state that something is “still a [type, supertype, or subtype].” Some effects state that an object becomes an “artifact creature”; these effects also allow the object to retain all of its prior card types and subtypes. Some effects state that an object becomes a “[creature type or types] artifact creature”; these effects also allow the object to retain all of its prior card types and subtypes other than creature types, but replace any existing creature types.
         \n\t\tExample: An ability reads, “All lands are 1/1 creatures that are still lands.” The affected lands now have two card types: creature and land. If there were any lands that were also artifacts before the ability’s effect applied to them, those lands would become “artifact land creatures,” not just “creatures,” or “land creatures.” The effect allows them to retain both the artifact and land card types. In addition, each land affected by the ability retains any land types and supertypes it had before the ability took effect.
         \n\t\tExample: An ability reads, “All artifacts are 1/1 artifact creatures.” If a permanent is both an artifact and an enchantment, it will become an artifact enchantment creature.
-    </string>
-    <string name="parts_of_a_card_7">
-        \t\t
         205.2a The card types are artifact, conspiracy, creature, dungeon, enchantment, instant, land, phenomenon, plane, planeswalker, scheme, sorcery, tribal, and vanguard. See section 3, “Card Types.”
         \n\n\t\t
         205.2b Some objects have more than one card type (for example, an artifact creature). Such objects satisfy the criteria for any effect that applies to any of their card types.
         \n\n\t\t
         205.2c Tokens have card types even though they aren’t cards. The same is true of copies of spells and copies of cards.
-    </string>
-    <string name="parts_of_a_card_8">
-        \t\t
+        \n\n\t\t
         205.3a A card can have one or more subtypes printed on its type line.
         \n\n\t\t
         205.3b Subtypes of each card type except plane are always single words and are listed after a long dash. Each word after the dash is a separate subtype; such objects may have multiple types. Subtypes of planes are also listed after a long dash, but may be multiple words; all words after the dash are, collectively, a single subtype.
@@ -1276,9 +1271,7 @@
         205.3p One dungeon card (Undercity) has a subtype; this subtype is called a dungeon type. That dungeon type is Undercity.
         \n\n\t\t
         205.3q Phenomenon cards, scheme cards, vanguard cards, and conspiracy cards have no subtypes.
-    </string>
-    <string name="parts_of_a_card_9">
-        \t\t
+        \n\n\t\t
         205.4a An object can have one or more supertypes. A card’s supertypes are printed directly before its card types. The supertypes are basic, legendary, ongoing, snow, and world.
         \n\n\t\t
         205.4b An object’s supertype is independent of its card type and subtype, even though some supertypes are closely identified with specific card types. Changing an object’s card types or subtypes won’t change its supertypes. Changing an object’s supertypes won’t change its card types or subtypes. When an object gains or loses a supertype, it retains any other supertypes it had.
@@ -1297,7 +1290,7 @@
         \n\n\t\t
         205.4h Any scheme card with the supertype “ongoing” is exempt from the state-based action for schemes (see rule 704.6e).
     </string>
-    <string name="parts_of_a_card_10">
+    <string name="parts_of_a_card_7">
         \t\t
         206.1. The expansion symbol indicates which Magic set a card is from. It’s a small icon normally printed below the right edge of the illustration. It has no effect on game play.
         \n\n\t\t
@@ -1315,7 +1308,7 @@
         \n\n\t\t
         206.5. The full list of expansions and expansion symbols can be found in the Card Set Archive section of the Magic website (<a href="https://magic.wizards.com/en/game-info/products/card-set-archive">Magic.Wizards.com/en/game-info/products/card-set-archive</a>).
     </string>
-    <string name="parts_of_a_card_11">
+    <string name="parts_of_a_card_8">
         \t\t
         207.1. The text box is printed on the lower half of the card. It usually contains rules text defining the card’s abilities.
         \n\n\t\t
@@ -1335,7 +1328,7 @@
         \n\n\t\t
         207.5. One card (Cryptic Spires) has a set of symbols below the text box that represent each color and an ability that instructs a player to circle two of those colors as they create their deck. To circle a color, the player circles (or otherwise clearly indicates) that color’s symbol. The mana symbol of each circled color is considered part of that card’s printed rules text (see rule 613.1) and affects that card’s color identity (see rule 903.4).
     </string>
-    <string name="parts_of_a_card_12">
+    <string name="parts_of_a_card_9">
         \t\t
         208.1. A creature card has two numbers separated by a slash printed in its lower right corner. The first number is its power (the amount of damage it deals in combat); the second is its toughness (the amount of damage needed to destroy it). For example, 2/3 means the object has power 2 and toughness 3. Power and toughness can be modified or set to particular values by effects.
         \n\n\t\t
@@ -1359,16 +1352,23 @@
         \n\n\t\t
         208.5. If a creature somehow has no value for its power, its power is 0. The same is true for toughness.
     </string>
-    <string name="parts_of_a_card_13">
+    <string name="parts_of_a_card_10">
         \t\t
         209.1. Each planeswalker card has a loyalty number printed in its lower right corner. This indicates its loyalty while it’s not on the battlefield, and it also indicates that the planeswalker enters the battlefield with that many loyalty counters on it (see rule 306.5b).
         \n\t\t
         209.2. An activated ability with a loyalty symbol in its cost is a loyalty ability. Loyalty abilities follow special rules: A player may activate a loyalty ability of a permanent they control any time they have priority and the stack is empty during a main phase of their turn, but only if none of that permanent’s loyalty abilities have been activated that turn. See rule 606, “Loyalty Abilities.”
         \n\n\t\t
+    </string>
+    <string name="parts_of_a_card_11">
+        \t\t
         210.1. Each vanguard card has a hand modifier printed in its lower left corner. This is a number preceded by a plus sign, a number preceded by a minus sign, or a zero. This modifier is applied as the starting hand size and the maximum hand size of the vanguard card’s owner are determined. See rule 103.5.
-        \n\n\t\t
+    </string>
+    <string name="parts_of_a_card_12">
+        \t\t
         211.1. Each vanguard card has a life modifier printed in its lower right corner. This is a number preceded by a plus sign, a number preceded by a minus sign, or a zero. This modifier is applied as the starting life total of the vanguard card’s owner is determined. See rule 103.4.
-        \n\n\t\t
+    </string>
+    <string name="parts_of_a_card_13">
+        \t\t
         212.1. Each card features text printed below the text box that has no effect on game play. Not all card sets were printed with all of the information listed below on each card.
         \n\n\t\t
         212.1a Most card sets feature collector numbers. This information is printed in the form [card number]/[total cards in the set] or simply [card number]. Some cards, such as unique cards in Planeswalker Decks, have card numbers that exceed the listed total number of cards.
