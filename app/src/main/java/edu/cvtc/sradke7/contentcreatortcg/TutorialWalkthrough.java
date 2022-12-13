@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +26,8 @@ public class TutorialWalkthrough extends AppCompatActivity {
     // Variables used in class
     Button btnWalkthroughMore;
 
+    ProgressBar progressBarWlk = null;
+
     private ImageView gif;
 
     private int link = 1;
@@ -38,6 +42,8 @@ public class TutorialWalkthrough extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_turn_walkthrough);
+
+        progressBarWlk = findViewById(R.id.progress_bar_wlk);
 
         // Set the button variables
         btnWalkthroughMore = findViewById(R.id.btnWalkthroughMore);
@@ -114,12 +120,14 @@ public class TutorialWalkthrough extends AppCompatActivity {
                 .listener(new RequestListener<GifDrawable>() {
                     @Override
                     public boolean onLoadFailed(@Nullable @org.jetbrains.annotations.Nullable GlideException e, Object model, Target<GifDrawable> target, boolean isFirstResource) {
+                        progressBarWlk.setVisibility(View.VISIBLE);
                         return false;
                     }
 
                     @Override
                     public boolean onResourceReady(GifDrawable resource, Object model, Target<GifDrawable> target, DataSource dataSource, boolean isFirstResource) {
                         resource.setLoopCount(1);
+                        progressBarWlk.setVisibility(View.VISIBLE);
                         return false;
                     }
                 })
