@@ -1,6 +1,7 @@
 package edu.cvtc.sradke7.contentcreatortcg.adapter;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import java.util.List;
 import edu.cvtc.sradke7.contentcreatortcg.CardViewerActivity;
 import edu.cvtc.sradke7.contentcreatortcg.R;
 import edu.cvtc.sradke7.contentcreatortcg.api.models.CardResponse;
+import edu.cvtc.sradke7.contentcreatortcg.api.models.ImageUriResponse;
 
 public class CardListAdapter extends RecyclerView.Adapter<CardListAdapter.CardViewHolder> {
 
@@ -43,9 +45,12 @@ public class CardListAdapter extends RecyclerView.Adapter<CardListAdapter.CardVi
     @Override
     public void onBindViewHolder(@NonNull CardListAdapter.CardViewHolder holder, int position) {
 
+        ImageUriResponse imageUri = cards.get(position).getImageUri();
+        if(imageUri != null) {
         Glide.with(context)
-                .load(cards.get(position).getImageUri().getImageUrl())
+                .load(imageUri.getImageUrl())
                 .into(holder.cardImage);
+        }
 
     }
 
