@@ -185,6 +185,10 @@ public class RuleBookGeneral extends AppCompatActivity implements AdapterView.On
                 intent = new Intent(RuleBookGeneral.this, RuleBookTableOfContents.class);
                 startActivity(intent);
                 return true;
+            case R.id.action_walkthrough_activity:
+                intent = new Intent(RuleBookGeneral.this, TutorialWalkthrough.class);
+                startActivity(intent);
+                return true;
             default:
                 // Do nothing
         }

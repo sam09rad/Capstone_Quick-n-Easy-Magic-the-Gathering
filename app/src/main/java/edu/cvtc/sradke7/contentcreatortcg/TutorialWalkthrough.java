@@ -59,6 +59,7 @@ public class TutorialWalkthrough extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        menu.findItem(R.id.action_walkthrough_activity).setVisible(false);
         return true;
     }
 

@@ -61,6 +61,10 @@ public class RuleBookTableOfContents extends AppCompatActivity implements View.O
                 intent = new Intent(RuleBookTableOfContents.this, QuickstartGuide.class);
                 startActivity(intent);
                 return true;
+            case R.id.action_walkthrough_activity:
+                intent = new Intent(RuleBookTableOfContents.this, TutorialWalkthrough.class);
+                startActivity(intent);
+                return true;
             default:
                 // Do nothing
         }

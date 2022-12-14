@@ -176,6 +176,10 @@ public class RuleBookCards extends AppCompatActivity implements AdapterView.OnIt
                 intent = new Intent(RuleBookCards.this, RuleBookTableOfContents.class);
                 startActivity(intent);
                 return true;
+            case R.id.action_walkthrough_activity:
+                intent = new Intent(RuleBookCards.this, TutorialWalkthrough.class);
+                startActivity(intent);
+                return true;
             default:
                 // Do nothing
         }

@@ -33,4 +33,13 @@
         android:orderInCategory="10"
         android:title="Viewer"
         app2:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_walkthrough_activity"
+        android:icon="@drawable/ic_walkthrough_activity"
+        android:iconTint="#070000"
+        android:orderInCategory="10"
+        android:title="Viewer"
+        app2:showAsAction="always"/>
+
 </menu>

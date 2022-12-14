@@ -90,6 +90,10 @@ public class CardViewerActivity extends AppCompatActivity {
                 intent = new Intent(CardViewerActivity.this, RuleBookTableOfContents.class);
                 startActivity(intent);
                 return true;
+            case R.id.action_walkthrough_activity:
+                intent = new Intent(CardViewerActivity.this, TutorialWalkthrough.class);
+                startActivity(intent);
+                return true;
             default:
                 // Do nothing
         }

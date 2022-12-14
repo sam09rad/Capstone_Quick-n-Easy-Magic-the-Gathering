@@ -28,8 +28,8 @@ public class QuickstartGuide extends AppCompatActivity {
                 Intent intent = new Intent(QuickstartGuide.this, CardViewerActivity.class);
                 startActivity(intent);
                 return true;
-            case R.id.action_quickstart_guide:
-                intent = new Intent(QuickstartGuide.this, QuickstartGuide.class);
+            case R.id.action_walkthrough_activity:
+                intent = new Intent(QuickstartGuide.this, TutorialWalkthrough.class);
                 startActivity(intent);
                 return true;
             case R.id.action_rule_book_viewer:
